@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:50:42
-#  Last Modified:  2019-10-08 16:50:52
+#  Last Modified:  2019-10-08 17:27:35
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -20,7 +20,8 @@ from keras.datasets import mnist
 from keras.models import load_model
 
 # 数据集
-(_, _), (X_test, y_test) = mnist.load_data()  # 划分MNIST训练集、测试集
+# 划分MNIST训练集、测试集
+(_, _), (X_test, y_test) = mnist.load_data()
 
 # 随机数
 index = random.randint(0, X_test.shape[0])
@@ -44,5 +45,4 @@ predict = np.argmax(predict)  # 取最大值的位置
 print('index', index)
 print('original:', y)
 print('predicted:', predict)
-
 
