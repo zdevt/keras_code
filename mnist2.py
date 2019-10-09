@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-09 11:01:04
-#  Last Modified:  2019-10-09 12:27:14
+#  Last Modified:  2019-10-09 12:41:05
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -20,6 +20,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPool2D, Flatten, Dropout, Dense
 from keras.losses import categorical_crossentropy
 from keras.optimizers import Adadelta
+from keras.models import load_model
 
 cfg = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True))
 cfg.gpu_options.per_process_gpu_memory_fraction = 0.9
@@ -41,7 +42,7 @@ X_test = (X_test - 127) / 127
 y_train = np_utils.to_categorical(y_train, num_classes=10)
 y_test = np_utils.to_categorical(y_test, num_classes=10)
 
-
+'''
 model = Sequential()
 model.add(Conv2D(32, (5, 5), activation='relu', input_shape=[28, 28, 1]))
 model.add(Conv2D(64, (5, 5), activation='relu'))
@@ -54,6 +55,9 @@ model.add(Dense(10, activation='softmax'))
 
 model.compile(loss=categorical_crossentropy,
               optimizer=Adadelta(), metrics=['accuracy'])
+'''
+
+model = load_model('mnistmodel2.h5')
 
 batch_size = 32
 epochs = 2
