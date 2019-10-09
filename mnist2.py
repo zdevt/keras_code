@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-09 11:01:04
-#  Last Modified:  2019-10-09 12:41:05
+#  Last Modified:  2019-10-09 16:25:50
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -22,10 +22,10 @@ from keras.losses import categorical_crossentropy
 from keras.optimizers import Adadelta
 from keras.models import load_model
 
-cfg = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True))
+cfg = tf.compat.v1.ConfigProto(gpu_options=tf.compat.v1.GPUOptions(allow_growth=True))
 cfg.gpu_options.per_process_gpu_memory_fraction = 0.9
 cfg.allow_soft_placement = True
-sess = tf.InteractiveSession(config=cfg)
+sess = tf.compat.v1.InteractiveSession(config=cfg)
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -39,7 +39,9 @@ X_test = X_test.astype('float32')
 X_train = (X_train - 127) / 127
 X_test = (X_test - 127) / 127
 
+# print(y_train.shape)
 y_train = np_utils.to_categorical(y_train, num_classes=10)
+# print(y_train.shape)
 y_test = np_utils.to_categorical(y_test, num_classes=10)
 
 '''

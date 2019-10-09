@@ -6,24 +6,24 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:50:42
-#  Last Modified:  2019-10-09 12:31:45
+#  Last Modified:  2019-10-09 14:06:36
 #       Revision:  none
 #       Compiler:  gcc
 #
 #         Author:  zt ()
 #   Organization:
 
-import tensorflow as tf
+# import tensorflow as tf
 import random
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from keras.datasets import mnist
 from keras.models import load_model
 
-cfg = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True))
-cfg.gpu_options.per_process_gpu_memory_fraction = 0.9
-cfg.allow_soft_placement = True
-sess = tf.InteractiveSession(config=cfg)
+# cfg = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True))
+# cfg.gpu_options.per_process_gpu_memory_fraction = 0.9
+# cfg.allow_soft_placement = True
+# sess = tf.InteractiveSession(config=cfg)
 
 # 数据集
 # 划分MNIST训练集、测试集
@@ -35,9 +35,9 @@ x = X_test[index]
 y = y_test[index]
 
 # 显示该数字
-plt.imshow(x, cmap='gray_r')
-plt.title("original {}".format(y))
-plt.show()
+# plt.imshow(x, cmap='gray_r')
+# plt.title("original {}".format(y))
+# plt.show()
 
 # 加载
 mymodel = load_model('mnistmodel2.h5')
