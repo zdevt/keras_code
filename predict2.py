@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:50:42
-#  Last Modified:  2019-10-09 11:42:46
+#  Last Modified:  2019-10-09 12:30:04
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -38,8 +38,6 @@ mymodel = load_model('mnistmodel2.h5')
 
 # 预测
 x = x.reshape(1, 28, 28, 1)
-print(x.shape)
-print(x)
 predict = mymodel.predict(x)
 # 取最大值的位置
 predict = np.argmax(predict)
