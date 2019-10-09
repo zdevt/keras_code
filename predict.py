@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:50:42
-#  Last Modified:  2019-10-08 17:27:35
+#  Last Modified:  2019-10-08 17:52:04
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -40,6 +40,7 @@ mymodel = load_model('mnistmodel.h5')
 x.shape = (1, 784)  # 变成[[]]
 # x = x.flatten()[None]  # 也可以用这个
 predict = mymodel.predict(x)
+# print(predict)
 predict = np.argmax(predict)  # 取最大值的位置
 
 print('index', index)

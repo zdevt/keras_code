@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:38:35
-#  Last Modified:  2019-10-08 17:26:41
+#  Last Modified:  2019-10-09 09:05:54
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -51,7 +51,7 @@ print(model.summary())
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # 训练
-model.fit(X_train, y_train, epochs=20, batch_size=64, verbose=1, validation_split=0.05)  # 迭代20次
+model.fit(X_train, y_train, epochs=20, batch_size=64, verbose=1, validation_split=0.025)  # 迭代20次
 
 # 评估
 loss, accuracy = model.evaluate(X_test, y_test)
