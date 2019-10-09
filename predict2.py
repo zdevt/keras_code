@@ -6,24 +6,24 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:50:42
-#  Last Modified:  2019-10-09 14:06:36
+#  Last Modified:  2019-10-09 17:02:27
 #       Revision:  none
 #       Compiler:  gcc
 #
 #         Author:  zt ()
 #   Organization:
 
-# import tensorflow as tf
+import tensorflow as tf
 import random
 import numpy as np
 # import matplotlib.pyplot as plt
 from keras.datasets import mnist
 from keras.models import load_model
 
-# cfg = tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True))
-# cfg.gpu_options.per_process_gpu_memory_fraction = 0.9
-# cfg.allow_soft_placement = True
-# sess = tf.InteractiveSession(config=cfg)
+cfg = tf.compat.v1.ConfigProto(gpu_options=tf.compat.v1.GPUOptions(allow_growth=True))
+cfg.gpu_options.per_process_gpu_memory_fraction = 0.9
+cfg.allow_soft_placement = True
+sess = tf.compat.v1.InteractiveSession(config=cfg)
 
 # 数据集
 # 划分MNIST训练集、测试集
