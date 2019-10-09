@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:38:35
-#  Last Modified:  2019-10-09 09:05:54
+#  Last Modified:  2019-10-09 11:33:15
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -21,8 +21,10 @@ from keras.layers.core import Dense
 # 数据集
 # 读取并划分MNIST训练集、测试集
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
+# print(len(X_train))
 
 X_train = X_train.reshape(len(X_train), -1)  # 二维变一维
+# print(X_train.shape)
 X_test = X_test.reshape(len(X_test), -1)
 
 X_train = X_train.astype('float32')  # 转为float类型

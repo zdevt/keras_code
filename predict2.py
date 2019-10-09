@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-08 16:50:42
-#  Last Modified:  2019-10-09 11:37:25
+#  Last Modified:  2019-10-09 11:42:46
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -34,14 +34,15 @@ plt.title("original {}".format(y))
 plt.show()
 
 # 加载
-mymodel = load_model('mnistmodel.h5')
+mymodel = load_model('mnistmodel2.h5')
 
 # 预测
-x.shape = (1, 784)  # 变成[[]]
-# x = x.flatten()[None]  # 也可以用这个
+x = x.reshape(1, 28, 28, 1)
+print(x.shape)
+print(x)
 predict = mymodel.predict(x)
-# print(predict)
-predict = np.argmax(predict)  # 取最大值的位置
+# 取最大值的位置
+predict = np.argmax(predict)
 
 print('index', index)
 print('original:', y)
