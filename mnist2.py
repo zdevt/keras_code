@@ -6,7 +6,7 @@
 #
 #        Version:  1.0
 #        Created:  2019-10-09 11:01:04
-#  Last Modified:  2019-10-09 16:25:50
+#  Last Modified:  2020-02-21 19:16:46
 #       Revision:  none
 #       Compiler:  gcc
 #
@@ -62,7 +62,7 @@ model.compile(loss=categorical_crossentropy,
 model = load_model('mnistmodel2.h5')
 
 batch_size = 32
-epochs = 2
+epochs = 10
 model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs)
 
 loss, accuracy = model.evaluate(X_test, y_test, verbose=1)
